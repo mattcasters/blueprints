@@ -9,3 +9,10 @@ Topics covered so far:
 - model_driven : These examples show how to externalize metadata w.r.t. PDI using ETL Metadata Injection.  It demoes SDR as well.
 
 - 
+
+Setup
+--------
+- A desktop with the BA server demo running on port 8080 (version 6.0 or later) to run the SDR examples
+- A database (Postgres/MySQL/...) called demo (to be configured by you)
+- Carte ports 8181 through 8185 NOT used for the load balance examples
+
