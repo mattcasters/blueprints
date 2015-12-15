@@ -11,7 +11,7 @@
     <parameters>
         <parameter>
             <name>LAYOUT_FILE</name>
-            <default_value>lastnames.json</default_value>
+            <default_value>&#x2f;home&#x2f;matt&#x2f;git&#x2f;mattcasters&#x2f;blueprints&#x2f;auto_create_table&#x2f;queue_table.json</default_value>
             <description>The layout file in JSON</description>
         </parameter>
     </parameters>
@@ -188,7 +188,7 @@
       <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
       <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
       <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>Y</attribute></attribute>
-      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>N</attribute></attribute>
       <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
     </attributes>
   </connection>
@@ -318,33 +318,6 @@
   <hop> <from>pick fields</from><to>drop&#x2f;create</to><enabled>Y</enabled> </hop>
   </order>
   <step>
-    <name>drop&#x2f;create</name>
-    <type>ScriptValueMod</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <compatible>N</compatible>
-    <optimizationLevel>9</optimizationLevel>
-    <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
-        <jsScript_name>RowScript</jsScript_name>
-        <jsScript_script>&#xa;var targetDb, targetSchema, targetTable&#x3b;&#xa;var vmFactory &#x3d; org.pentaho.di.core.row.value.ValueMetaFactory&#x3b;&#xa;&#xa;var rowLayout&#x3b;&#xa;&#xa;if &#x28;rowLayout&#x3d;&#x3d;null&#x29; &#x7b;&#xa;  rowLayout &#x3d; new org.pentaho.di.core.row.RowMeta&#x28;&#x29;&#x3b;&#xa;&#xa;  var targetDb &#x3d; targetdatabase&#x3b;&#xa;  var targetSchema &#x3d; targetschema&#x3b;&#xa;  var targetTable &#x3d; targettable&#x3b;&#xa;&#x7d;&#xa;&#xa;var type &#x3d; vmFactory.getIdForValueMeta&#x28;fieldtype&#x29;&#x3b;&#xa;var valueMeta &#x3d; vmFactory.createValueMeta&#x28;fieldname, type, fieldlength, fieldprecision&#x29;&#x3b;&#xa;rowLayout.addValueMeta&#x28;valueMeta&#x29;&#x3b;&#xa;&#xa;</jsScript_script>
-      </jsScript>      <jsScript>        <jsScript_type>2</jsScript_type>
-        <jsScript_name>EndScript</jsScript_name>
-        <jsScript_script>&#xa;&#xa;var dbMeta &#x3d; _step_.getTrans&#x28;&#x29;.getTransMeta&#x28;&#x29;.findDatabase&#x28;targetDb&#x29;&#x3b;&#xa;&#xa;for &#x28;i&#x3d;0&#x3b;i&#x3c;rowLayout.size&#x28;&#x29;&#x3b;i&#x2b;&#x2b;&#x29; &#x7b;&#xa;  var valueMeta &#x3d; rowLayout.getValueMeta&#x28;i&#x29;&#x3b;&#xa;  var name &#x3d; valueMeta.getName&#x28;&#x29;&#x3b;&#xa;  valueMeta.setName&#x28; dbMeta.quoteField&#x28;name&#x29; &#x29;&#x3b;&#xa;&#x7d;&#xa;&#xa;var schemaTable &#x3d; dbMeta.getQuotedSchemaTableCombination&#x28;targetSchema, targetTable&#x29;&#x3b;&#xa;var db &#x3d; new org.pentaho.di.core.database.Database&#x28;_step_, dbMeta&#x29;&#x3b;&#xa;try &#x7b;&#xa;  db.connect&#x28;&#x29;&#x3b;&#xa;  &#xa;  if &#x28;db.checkTableExists&#x28;schemaTable&#x29;&#x29; &#x7b;&#xa;    db.execStatement&#x28;&#x22;DROP TABLE &#x22;&#x2b;schemaTable&#x29;&#x3b;&#xa;  &#x7d;&#xa;&#xa;  var sql &#x3d; db.getCreateTableStatement&#x28;schemaTable, rowLayout, null, false, false, false&#x29;&#x3b;&#xa;&#xa;  &#x2f;&#x2f; Alert&#x28;&#x22;SQL&#x3a; &#x22;&#x2b;sql&#x29;&#x3b;&#xa;&#xa;  db.execStatement&#x28; sql &#x29;&#x3b;&#xa;&#x7d; finally &#x7b;&#xa;  db.disconnect&#x28;&#x29;&#x3b;&#xa;&#x7d;&#xa;</jsScript_script>
-      </jsScript>    </jsScripts>    <fields>    </fields>     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>624</xloc>
-      <yloc>112</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
     <name>JSON static info</name>
     <type>JsonInput</type>
     <description/>
@@ -365,7 +338,7 @@
     <ignoreMissingPath>N</ignoreMissingPath>
     <rownum_field/>
     <file>
-      <name>&#x24;&#x7b;Internal.Entry.Current.Directory&#x7d;&#x2f;&#x24;&#x7b;LAYOUT_FILE&#x7d;</name>
+      <name>&#x24;&#x7b;LAYOUT_FILE&#x7d;</name>
       <filemask/>
       <exclude_filemask/>
       <file_required>N</file_required>
@@ -440,6 +413,33 @@
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
       <xloc>128</xloc>
+      <yloc>112</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>drop&#x2f;create</name>
+    <type>ScriptValueMod</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <compatible>N</compatible>
+    <optimizationLevel>9</optimizationLevel>
+    <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
+        <jsScript_name>RowScript</jsScript_name>
+        <jsScript_script>&#xa;var targetDb, targetSchema, targetTable&#x3b;&#xa;var vmFactory &#x3d; org.pentaho.di.core.row.value.ValueMetaFactory&#x3b;&#xa;&#xa;var rowLayout&#x3b;&#xa;&#xa;if &#x28;rowLayout&#x3d;&#x3d;null&#x29; &#x7b;&#xa;  rowLayout &#x3d; new org.pentaho.di.core.row.RowMeta&#x28;&#x29;&#x3b;&#xa;&#xa;  var targetDb &#x3d; targetdatabase&#x3b;&#xa;  var targetSchema &#x3d; targetschema&#x3b;&#xa;  var targetTable &#x3d; targettable&#x3b;&#xa;&#x7d;&#xa;&#xa;var type &#x3d; vmFactory.getIdForValueMeta&#x28;fieldtype&#x29;&#x3b;&#xa;var valueMeta &#x3d; vmFactory.createValueMeta&#x28;fieldname, type, fieldlength, fieldprecision&#x29;&#x3b;&#xa;rowLayout.addValueMeta&#x28;valueMeta&#x29;&#x3b;&#xa;&#xa;</jsScript_script>
+      </jsScript>      <jsScript>        <jsScript_type>2</jsScript_type>
+        <jsScript_name>EndScript</jsScript_name>
+        <jsScript_script>&#xa;&#xa;var dbMeta &#x3d; _step_.getTrans&#x28;&#x29;.getTransMeta&#x28;&#x29;.findDatabase&#x28;targetDb&#x29;&#x3b;&#xa;&#xa;for &#x28;i&#x3d;0&#x3b;i&#x3c;rowLayout.size&#x28;&#x29;&#x3b;i&#x2b;&#x2b;&#x29; &#x7b;&#xa;  var valueMeta &#x3d; rowLayout.getValueMeta&#x28;i&#x29;&#x3b;&#xa;  var name &#x3d; valueMeta.getName&#x28;&#x29;&#x3b;&#xa;  valueMeta.setName&#x28; dbMeta.quoteField&#x28;name&#x29; &#x29;&#x3b;&#xa;&#x7d;&#xa;&#xa;var schemaTable &#x3d; dbMeta.getQuotedSchemaTableCombination&#x28;targetSchema, targetTable&#x29;&#x3b;&#xa;var db &#x3d; new org.pentaho.di.core.database.Database&#x28;_step_, dbMeta&#x29;&#x3b;&#xa;try &#x7b;&#xa;  db.connect&#x28;&#x29;&#x3b;&#xa;  &#xa;  if &#x28;db.checkTableExists&#x28;schemaTable&#x29;&#x29; &#x7b;&#xa;    db.execStatement&#x28;&#x22;DROP TABLE &#x22;&#x2b;schemaTable&#x29;&#x3b;&#xa;  &#x7d;&#xa;&#xa;  var sql &#x3d; db.getCreateTableStatement&#x28;schemaTable, rowLayout, null, false, false, false&#x29;&#x3b;&#xa;&#xa;  &#x2f;&#x2f; Alert&#x28;&#x22;SQL&#x3a; &#x22;&#x2b;sql&#x29;&#x3b;&#xa;&#xa;  db.execStatement&#x28; sql &#x29;&#x3b;&#xa;&#x7d; finally &#x7b;&#xa;  db.disconnect&#x28;&#x29;&#x3b;&#xa;&#x7d;&#xa;</jsScript_script>
+      </jsScript>    </jsScripts>    <fields>    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>624</xloc>
       <yloc>112</yloc>
       <draw>Y</draw>
       </GUI>
