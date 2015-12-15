@@ -1,0 +1,56 @@
+{
+   "targettable" : "firstnames",
+   "targetschema" : "",
+   "targetdatabase" : "demo",
+ 
+   "modelname" : "First names",
+ 
+   "separator" : ",",
+
+   "fields":[
+      {
+         "name":"name",
+         "type":"String",
+         "flength":"20",
+         "precision":"-1",
+         "format":null,
+         "currency":"$",
+         "decimal":".",
+         "trimtype":"none",
+         "group":","
+      },
+      {
+         "name":"percentage",
+         "precision":"3",
+         "format":"#.#",
+         "flength":"6",
+         "currency":"$",
+         "type":"Number",
+         "decimal":".",
+         "trimtype":"none",
+         "group":","
+      },
+      {
+         "name":"rank",
+         "precision":"0",
+         "format":"#",
+         "flength":"7",
+         "currency":"$",
+         "type":"Integer",
+         "decimal":".",
+         "trimtype":"none",
+         "group":","
+      },
+      {
+         "name":"gender",
+         "flength":"1",
+         "type":"String",
+         "precision":"-1",
+         "format":"",
+         "currency":"$",
+         "decimal":".",
+         "trimtype":"none",
+         "group":","
+      }
+   ]
+}

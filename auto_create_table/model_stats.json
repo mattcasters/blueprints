@@ -1,0 +1,41 @@
+{
+   "targettable" : "model_stats",
+   "targetschema" : "",
+   "targetdatabase" : "demo",
+
+   "fields":[
+      {
+         "name":"modelname",
+         "type":"String",
+         "flength":"50",
+         "precision":"-1",
+         "format":null,
+         "currency":"$",
+         "decimal":".",
+         "trimtype":"none",
+         "group":","
+      },
+      {
+         "name":"rowcount",
+         "type":"Integer",
+         "flength":"15",
+         "precision":"0",
+         "format":"#",
+         "currency":"$",
+         "decimal":".",
+         "trimtype":"none",
+         "group":","
+      },
+      {
+         "name":"logdate",
+         "type":"Date",
+         "flength":"-1",
+         "precision":"-1",
+         "format":"#",
+         "currency":"$",
+         "decimal":".",
+         "trimtype":"none",
+         "group":","
+      }
+   ]
+}
