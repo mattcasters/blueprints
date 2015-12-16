@@ -8,7 +8,13 @@ Topics covered so far:
 
 - model_driven : These examples show how to externalize metadata w.r.t. PDI using ETL Metadata Injection.  It demoes SDR as well.
 
-- 
+- queue : demonstrates what a queue is and how it works using a simple set of files
+
+- file_generator : a simple transformation shows how you can generate semi-random data
+
+- file_layout_detector : this job tries to automatically detect the layout of a text file
+
+- TODO: scale_out example with a queue handing out work to a set of Carte servers 
 
 Setup
 --------

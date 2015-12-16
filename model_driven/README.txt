@@ -1,3 +1,9 @@
+
+Setup
+------
+Make sure to run the auto_create_table sample transformation: create-all-tables.ktr
+This will automatically create the required tables for the examples described below.
+
 01 - The first sample
 ----------------------
 

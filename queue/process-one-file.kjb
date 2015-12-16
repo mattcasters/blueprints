@@ -264,12 +264,12 @@
       <yloc>80</yloc>
       </entry>
     <entry>
-      <name>handle-one-file</name>
+      <name>preprocess-one-file</name>
       <description/>
       <type>TRANS</type>
       <specification_method>filename</specification_method>
       <trans_object_id/>
-      <filename>&#x24;&#x7b;Internal.Entry.Current.Directory&#x7d;&#x2f;handle-one-file.ktr</filename>
+      <filename>&#x24;&#x7b;Internal.Entry.Current.Directory&#x7d;&#x2f;preprocess-one-file.ktr</filename>
       <transname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
@@ -375,7 +375,7 @@
   <hops>
     <hop>
       <from>START</from>
-      <to>handle-one-file</to>
+      <to>preprocess-one-file</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -383,7 +383,7 @@
       <unconditional>Y</unconditional>
     </hop>
     <hop>
-      <from>handle-one-file</from>
+      <from>preprocess-one-file</from>
       <to>process-one-file</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>

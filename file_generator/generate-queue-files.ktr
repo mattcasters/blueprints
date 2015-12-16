@@ -11,8 +11,8 @@
     <parameters>
         <parameter>
             <name>TARGET_FOLDER</name>
-            <default_value>weblog</default_value>
-            <description/>
+            <default_value/>
+            <description>The folder in which the transformation will write sample log files.  Leave it empty to write to a weblog&#x2f; folder with the same parent folder as this transformation.</description>
         </parameter>
     </parameters>
     <log>
@@ -122,11 +122,32 @@
   </info>
   <notepads>
     <notepad>
-      <note>To test output</note>
-      <xloc>560</xloc>
-      <yloc>288</yloc>
-      <width>103</width>
+      <note>To test output validity</note>
+      <xloc>496</xloc>
+      <yloc>384</yloc>
+      <width>154</width>
       <heigth>29</heigth>
+      <fontname>Arial</fontname>
+      <fontsize>10</fontsize>
+      <fontbold>N</fontbold>
+      <fontitalic>N</fontitalic>
+      <fontcolorred>0</fontcolorred>
+      <fontcolorgreen>0</fontcolorgreen>
+      <fontcolorblue>0</fontcolorblue>
+      <backgroundcolorred>255</backgroundcolorred>
+      <backgroundcolorgreen>205</backgroundcolorgreen>
+      <backgroundcolorblue>112</backgroundcolorblue>
+      <bordercolorred>100</bordercolorred>
+      <bordercolorgreen>100</bordercolorgreen>
+      <bordercolorblue>100</bordercolorblue>
+      <drawshadow>Y</drawshadow>
+    </notepad>
+    <notepad>
+      <note>You can specify a TARGET_FOLDER parameter to describe where you need the files ot be placed.&#xa;Leave that parameter empty to write to a weblog&#x2f; folder with the same parent folder as this transformation.&#xa;&#xa;Modify the sample to your liking by changing the values in the left-hand side Data Grid steps.&#xa;You can also add more dimension into the mix and hook &#x27;m up to the Join &#x28;X&#x29; step.</note>
+      <xloc>416</xloc>
+      <yloc>16</yloc>
+      <width>735</width>
+      <heigth>105</heigth>
       <fontname>Arial</fontname>
       <fontsize>10</fontsize>
       <fontbold>N</fontbold>
@@ -209,7 +230,7 @@
       <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
       <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
       <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>Y</attribute></attribute>
-      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>N</attribute></attribute>
       <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
     </attributes>
   </connection>
@@ -434,7 +455,10 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 		prodIdField = getParameter("PRODID_FIELD");
 		dayField = getParameter("DAY_FIELD");
 		logField = getParameter("LOG_FIELD");
-        targetFolder = getVariable("TARGET_FOLDER", ".");
+        targetFolder = getVariable("TARGET_FOLDER", null);
+        if (Const.isEmpty(targetFolder)) {
+          targetFolder = getTrans().environmentSubstitute("${Internal.Transformation.Filename.Directory}")+"/weblog";
+        }
 		rnd = new Random();
 
 	    first=false;
