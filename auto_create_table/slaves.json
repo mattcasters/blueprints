@@ -1,0 +1,56 @@
+{
+   "targettable" : "slaves",
+   "targetschema" : "",
+   "targetdatabase" : "demo",
+
+   "fields":[
+      {
+         "name":"slave_id",
+         "type":"Integer",
+         "flength":"15",
+         "precision":"0"
+      },
+      {
+         "name":"name",
+         "type":"String",
+         "flength":"255",
+         "precision":"-1"
+      },
+      {
+         "name":"enabled",
+         "type":"Boolean",
+         "flength":"1",
+         "precision":"0"
+      },
+      {
+         "name":"last_response_time"
+         "type":"Integer",
+         "flength":"7",
+         "precision":"0"
+      },
+      {
+         "name":"last_found_date",
+         "type":"Date",
+         "flength":"-1",
+         "precision":"-1"
+      },
+      {
+         "name":"last_load",
+         "type":"Integer",
+         "flength":"-1",
+         "precision":"-1"
+      },
+      {
+         "name":"max_load",
+         "type":"Integer",
+         "flength":"-1",
+         "precision":"-1"
+      },
+      {
+         "name":"active",
+         "type":"Boolean",
+         "flength":"1",
+         "precision":"0"
+      }
+   ]
+}
