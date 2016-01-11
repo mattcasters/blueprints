@@ -116,7 +116,7 @@
   </info>
   <notepads>
     <notepad>
-      <note>Find all files in the input&#x2f; folder and queue them&#x3a;&#xa;- move the discovered file to the queue&#x2f; folder&#xa;- Add an entry to queue_table&#xa; </note>
+      <note>Find all files in the input&#x2f; folder and queue them&#x3a;&#xa;- move the discovered file to the queue&#x2f; folder&#xa;- Add an entry to the queue table&#xa; </note>
       <xloc>64</xloc>
       <yloc>272</yloc>
       <width>336</width>
@@ -158,7 +158,7 @@
       <drawshadow>Y</drawshadow>
     </notepad>
     <notepad>
-      <note>Add to queue_table</note>
+      <note>Add to queue table</note>
       <xloc>1024</xloc>
       <yloc>352</yloc>
       <width>146</width>
@@ -380,7 +380,7 @@
   <hop> <from>target_folder</from><to>target_file</to><enabled>Y</enabled> </hop>
   <hop> <from>target_file</from><to>move file</to><enabled>Y</enabled> </hop>
   <hop> <from>status_description</from><to>target_folder</to><enabled>Y</enabled> </hop>
-  <hop> <from>move file</from><to>queue_table</to><enabled>Y</enabled> </hop>
+  <hop> <from>move file</from><to>queue</to><enabled>Y</enabled> </hop>
   </order>
   <step>
     <name>Get File Names</name>
@@ -462,7 +462,7 @@
            <schema_name/>
            </partitioning>
     <connection>demo</connection>
-    <sql>select max&#x28;queue_id&#x29; as max_queue_id from queue_table</sql>
+    <sql>select max&#x28;queue_id&#x29; as max_queue_id from queue</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
@@ -569,7 +569,7 @@
     </step>
 
   <step>
-    <name>queue_table</name>
+    <name>queue</name>
     <type>TableOutput</type>
     <description/>
     <distribute>Y</distribute>
@@ -581,7 +581,7 @@
            </partitioning>
     <connection>demo</connection>
     <schema/>
-    <table>queue_table</table>
+    <table>queue</table>
     <commit>1000</commit>
     <truncate>N</truncate>
     <ignore_errors>N</ignore_errors>

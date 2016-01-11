@@ -123,8 +123,8 @@
       <yloc>208</yloc>
       <width>638</width>
       <heigth>112</heigth>
-      <fontname/>
-      <fontsize>-1</fontsize>
+      <fontname>Ubuntu</fontname>
+      <fontsize>14</fontsize>
       <fontbold>N</fontbold>
       <fontitalic>N</fontitalic>
       <fontcolorred>0</fontcolorred>

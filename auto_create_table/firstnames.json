@@ -12,45 +12,25 @@
          "name":"name",
          "type":"String",
          "flength":"20",
-         "precision":"-1",
-         "format":null,
-         "currency":"$",
-         "decimal":".",
-         "trimtype":"none",
-         "group":","
+         "precision":"-1"
       },
       {
          "name":"percentage",
-         "precision":"3",
-         "format":"#.#",
-         "flength":"6",
-         "currency":"$",
          "type":"Number",
-         "decimal":".",
-         "trimtype":"none",
-         "group":","
+         "flength":"6",
+         "precision":"3"
       },
       {
          "name":"rank",
-         "precision":"0",
-         "format":"#",
-         "flength":"7",
-         "currency":"$",
          "type":"Integer",
-         "decimal":".",
-         "trimtype":"none",
-         "group":","
+         "flength":"7",
+         "precision":"0"
       },
       {
          "name":"gender",
-         "flength":"1",
          "type":"String",
-         "precision":"-1",
-         "format":"",
-         "currency":"$",
-         "decimal":".",
-         "trimtype":"none",
-         "group":","
+         "flength":"1",
+         "precision":"-1"
       }
    ]
 }

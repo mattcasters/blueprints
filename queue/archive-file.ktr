@@ -340,7 +340,7 @@
   <hop> <from>File details</from><to>archive_folder</to><enabled>Y</enabled> </hop>
   <hop> <from>move file</from><to>archive_date</to><enabled>Y</enabled> </hop>
   <hop> <from>archive_date</from><to>status &#x3d; archived</to><enabled>Y</enabled> </hop>
-  <hop> <from>status &#x3d; archived</from><to>queue_table &#x3a; archive_date, status</to><enabled>Y</enabled> </hop>
+  <hop> <from>status &#x3d; archived</from><to>queue &#x3a; archive_date, status</to><enabled>Y</enabled> </hop>
   <hop> <from>process_filename</from><to>queue_id</to><enabled>Y</enabled> </hop>
   </order>
   <step>
@@ -511,7 +511,7 @@
            <schema_name/>
            </partitioning>
     <connection>demo</connection>
-    <sql>SELECT process_filename&#xa;FROM   queue_table&#xa;WHERE  queue_id &#x3d; &#x24;&#x7b;QUEUE_ID&#x7d;</sql>
+    <sql>SELECT process_filename&#xa;FROM   queue&#xa;WHERE  queue_id &#x3d; &#x24;&#x7b;QUEUE_ID&#x7d;</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
@@ -559,7 +559,7 @@
     </step>
 
   <step>
-    <name>queue_table &#x3a; archive_date, status</name>
+    <name>queue &#x3a; archive_date, status</name>
     <type>Update</type>
     <description/>
     <distribute>Y</distribute>
@@ -577,7 +577,7 @@
     <ignore_flag_field/>
     <lookup>
       <schema/>
-      <table>queue_table</table>
+      <table>queue</table>
       <key>
         <name>queue_id</name>
         <field>queue_id</field>

@@ -12,122 +12,67 @@
          "name":"name",
          "type":"String",
          "flength":"50",
-         "precision":"-1",
-         "format":null,
-         "currency":"$",
-         "decimal":".",
-         "trimtype":"none",
-         "group":","
+         "precision":"-1"
       },
       {
          "name":"rank",
          "type":"Integer",
          "flength":"15",
-         "precision":"0",
-         "format":"#",
-         "currency":"$",
-         "decimal":".",
-         "trimtype":"none",
-         "group":","
+         "precision":"0"
       },
       {
          "name":"count",
          "type":"Integer",
          "flength":"15",
-         "precision":"0",
-         "format":"#",
-         "currency":"$",
-         "decimal":".",
-         "trimtype":"none",
-         "group":","
+         "precision":"0"
       },
       {
          "name":"prop100k",
          "type":"Number",
          "flength":"6",
-         "precision":"2",
-         "format":"#.#",
-         "currency":"$",
-         "decimal":".",
-         "trimtype":"none",
-         "group":","
+         "precision":"2"
       },
       {
          "name":"cum_prop100k",
          "type":"Number",
          "flength":"8",
-         "precision":"2",
-         "format":"#.#",
-         "currency":"$",
-         "decimal":".",
-         "trimtype":"none",
-         "group":","
+         "precision":"2"
       },
       {
          "name":"pctwhite",
          "type":"Number",
          "flength":"7",
-         "precision":"2",
-         "format":"#.#",
-         "currency":"$",
-         "decimal":".",
-         "trimtype":"none",
-         "group":","
+         "precision":"2"
       },
       {
          "name":"pctblack",
          "type":"Number",
          "flength":"7",
-         "precision":"2",
-         "format":"#.#",
-         "currency":"$",
-         "decimal":".",
-         "trimtype":"none",
-         "group":","
+         "precision":"2"
       },
       {
          "name":"pctapi",
          "type":"Number",
          "flength":"7",
-         "precision":"2",
-         "format":"#.#",
-         "currency":"$",
-         "decimal":".",
-         "trimtype":"none",
-         "group":","
+         "precision":"2"
       },
       {
          "name":"pctaian",
          "type":"Number",
          "flength":"7",
-         "precision":"2",
-         "format":"#.#",
-         "currency":"$",
-         "decimal":".",
-         "trimtype":"none",
-         "group":","
+         "precision":"2"
       },
       {
          "name":"pct2prace",
          "type":"Number",
          "flength":"7",
-         "precision":"2",
-         "format":"#.#",
-         "currency":"$",
-         "decimal":".",
-         "trimtype":"none",
-         "group":","
+         "precision":"2"
       },
       {
          "name":"pcthispanic",
          "type":"Number",
          "flength":"7",
-         "precision":"2",
-         "format":"#.#",
-         "currency":"$",
-         "decimal":".",
-         "trimtype":"none",
-         "group":","
+         "precision":"2"
       }
    ]
 }

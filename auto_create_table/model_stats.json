@@ -8,34 +8,19 @@
          "name":"modelname",
          "type":"String",
          "flength":"50",
-         "precision":"-1",
-         "format":null,
-         "currency":"$",
-         "decimal":".",
-         "trimtype":"none",
-         "group":","
+         "precision":"-1"
       },
       {
          "name":"rowcount",
          "type":"Integer",
          "flength":"15",
-         "precision":"0",
-         "format":"#",
-         "currency":"$",
-         "decimal":".",
-         "trimtype":"none",
-         "group":","
+         "precision":"0"
       },
       {
          "name":"logdate",
          "type":"Date",
          "flength":"-1",
-         "precision":"-1",
-         "format":"#",
-         "currency":"$",
-         "decimal":".",
-         "trimtype":"none",
-         "group":","
+         "precision":"-1"
       }
    ]
 }
