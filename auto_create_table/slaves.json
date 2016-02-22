@@ -23,7 +23,7 @@
          "precision":"0"
       },
       {
-         "name":"last_response_time"
+         "name":"last_response_time",
          "type":"Integer",
          "flength":"7",
          "precision":"0"
