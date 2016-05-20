@@ -123,7 +123,7 @@
     <specification_method>filename</specification_method>
     <trans_object_id/>
     <trans_name/>
-    <filename>&#x2f;&#x2f;&#x2f;home&#x2f;matt&#x2f;git&#x2f;mattcasters&#x2f;blueprints&#x2f;scale_out&#x2f;check-slave-servers.ktr</filename>
+    <filename>&#x24;&#x7b;Internal.Transformation.Filename.Directory&#x7d;&#x2f;check-slave-servers.ktr</filename>
     <directory_path/>
     <group_size>1</group_size>
     <group_field/>
