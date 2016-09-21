@@ -220,7 +220,7 @@
       <type>JOB</type>
       <specification_method>filename</specification_method>
       <job_object_id/>
-      <filename>&#x2f;home&#x2f;matt&#x2f;git&#x2f;mattcasters&#x2f;blueprints&#x2f;scale_out&#x2f;scaleout-one-file.kjb</filename>
+      <filename>&#x24;&#x7b;Internal.Entry.Current.Directory&#x7d;&#x2f;..&#x2f;scale_out&#x2f;scaleout-one-file.kjb</filename>
       <jobname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
